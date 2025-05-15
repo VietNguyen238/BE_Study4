@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\be-study4.props" />
+</Project>
