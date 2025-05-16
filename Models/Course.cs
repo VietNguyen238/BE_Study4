@@ -13,5 +13,7 @@ namespace be_study4.Models
         public string Category { get; set; } = string.Empty;
         public int Price { get; set; }
         public int NewPrice { get; set; }
+        public DateTime CreateOn { get; set; } = DateTime.Now;
+
     }
 }

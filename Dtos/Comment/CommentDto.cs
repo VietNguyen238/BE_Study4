@@ -6,5 +6,8 @@ namespace be_study4.Dtos.Comment
         public string Title { get; set; } = string.Empty;
         public string Content { get; set; } = string.Empty;
         public int UserId { get; set; }
+        public int ExamTopicId { get; set; }
+        public DateTime CreateOn { get; set; } = DateTime.Now;
+
     }
 }

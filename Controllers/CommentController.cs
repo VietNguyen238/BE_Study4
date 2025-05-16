@@ -2,6 +2,7 @@ using be_study4.Data;
 using be_study4.Dtos.Comment;
 using be_study4.Interfaces;
 using be_study4.Mappers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace be_study4.Controllers
@@ -45,18 +46,20 @@ namespace be_study4.Controllers
         }
 
         [HttpPost("add/{id:int}")]
-        public async Task<IActionResult> Create([FromRoute] int id, [FromBody] CreateCommentDto createDto)
+        [Authorize]
+        public async Task<IActionResult> Create([FromRoute] int userId, [FromRoute] int examTopicId, [FromBody] CreateCommentDto createDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var comment = createDto.ToCreateCommentDto(id);
+            var comment = createDto.ToCreateCommentDto(userId, examTopicId);
             await _commentRepo.CreateAsync(comment);
 
             return CreatedAtAction(nameof(GetById), new { id = comment.Id }, comment.ToCommentDto());
         }
 
         [HttpPut("update/{id:int}")]
+        [Authorize]
         public async Task<IActionResult> Update([FromRoute] int id, UpdateCommentDto updateCommentDto)
         {
             if (!ModelState.IsValid)
@@ -69,6 +72,7 @@ namespace be_study4.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             if (!ModelState.IsValid)

@@ -4,6 +4,7 @@ using be_study4.Helpers;
 using be_study4.Interfaces;
 using be_study4.Mappers;
 using be_study4.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace be_study4.Controllers
@@ -50,6 +51,7 @@ namespace be_study4.Controllers
         }
 
         [HttpPost("add/{userId:int}")]
+        [Authorize]
         public async Task<IActionResult> Create([FromRoute] int userId, [FromForm] CreateCourseDto createDto, IFormFile FileImage)
         {
             if (!ModelState.IsValid)
@@ -78,6 +80,7 @@ namespace be_study4.Controllers
         }
 
         [HttpPut("update/{id:int}")]
+        [Authorize]
         public async Task<IActionResult> Update([FromRoute] int id, UpdateCourseDto updateCourseDto)
         {
             if (!ModelState.IsValid)
@@ -90,6 +93,7 @@ namespace be_study4.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize]
         public async Task<IActionResult> Delete([FromRoute] int id)
         {
             if (!ModelState.IsValid)

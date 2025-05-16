@@ -14,5 +14,6 @@ namespace be_study4.Dtos.User
         public required List<CourseDto> Courses { get; set; }
         public required List<AdviseDto> Advises { get; set; }
         public required List<CommentDto> Comments { get; set; }
+        public DateTime CreateOn { get; set; } = DateTime.Now;
     }
 }

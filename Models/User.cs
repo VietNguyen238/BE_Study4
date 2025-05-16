@@ -13,5 +13,6 @@ namespace be_study4.Models
         public List<ExamTopic> ExamTopics { get; set; } = new List<ExamTopic>();
         public List<Course> Courses { get; set; } = new List<Course>();
         public List<Advise> Advises { get; set; } = new List<Advise>();
+        public DateTime CreateOn { get; set; } = DateTime.Now;
     }
 }

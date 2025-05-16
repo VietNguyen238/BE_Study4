@@ -16,6 +16,7 @@ namespace be_study4.Mappers
                 Advises = userModel.Advises.Select(s => s.ToAdviseDto()).ToList(),
                 Comments = userModel.Comments.Select(s => s.ToCommentDto()).ToList(),
                 Courses = userModel.Courses.Select(s => s.ToCourseDto()).ToList(),
+                CreateOn = userModel.CreateOn
             };
         }
 

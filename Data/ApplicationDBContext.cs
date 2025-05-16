@@ -16,5 +16,22 @@ namespace be_study4.Data
         public DbSet<ExamSection> ExamSections { get; set; }
         public DbSet<ExamTopic> ExamTopics { get; set; }
         public DbSet<Question> Questions { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.User)
+                .WithMany(u => u.Comments)
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.ExamTopic)
+                .WithMany(e => e.Comments)
+                .HasForeignKey(c => c.ExamTopicId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }

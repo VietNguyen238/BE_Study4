@@ -11,5 +11,7 @@ namespace be_study4.Models
         public string Subject { get; set; } = string.Empty;
         public int UserId { get; set; }
         public User? User { get; set; }
+        public DateTime CreateOn { get; set; } = DateTime.Now;
+
     }
 }

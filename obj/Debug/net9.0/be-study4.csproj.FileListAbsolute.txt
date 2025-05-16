@@ -178,3 +178,4 @@ D:\Documents\2024-2025\internship-project\be-study4\bin\Debug\net9.0\JWT.dll
 D:\Documents\2024-2025\internship-project\be-study4\bin\Debug\net9.0\CloudinaryDotNet.dll
 D:\Documents\2024-2025\internship-project\be-study4\bin\Debug\net9.0\Soenneker.Extensions.IFormFile.dll
 D:\Documents\2024-2025\internship-project\be-study4\bin\Debug\net9.0\Soenneker.Extensions.Stream.dll
+D:\Documents\2024-2025\internship-project\be-study4\obj\Debug\net9.0\be-study4.sourcelink.json

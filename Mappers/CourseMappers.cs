@@ -16,6 +16,7 @@ namespace be_study4.Mappers
                 Price = courseModel.Price,
                 UserId = courseModel.UserId,
                 Image = courseModel.Image,
+                CreateOn = courseModel.CreateOn
             };
         }
 

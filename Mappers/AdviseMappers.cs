@@ -5,15 +5,16 @@ namespace be_study4.Mappers
 {
     public static class AdviseMappers
     {
-        public static AdviseDto ToAdviseDto(this Advise AdviseModel)
+        public static AdviseDto ToAdviseDto(this Advise adviseModel)
         {
             return new AdviseDto
             {
-                Id = AdviseModel.Id,
-                Name = AdviseModel.Name,
-                Phone = AdviseModel.Phone,
-                Subject = AdviseModel.Subject,
-                UserId = AdviseModel.UserId
+                Id = adviseModel.Id,
+                Name = adviseModel.Name,
+                Phone = adviseModel.Phone,
+                Subject = adviseModel.Subject,
+                UserId = adviseModel.UserId,
+                CreateOn = adviseModel.CreateOn
             };
         }
 

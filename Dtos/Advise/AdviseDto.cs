@@ -7,5 +7,7 @@ namespace be_study4.Dtos.Advise
         public string Phone { get; set; } = string.Empty;
         public string Subject { get; set; } = string.Empty;
         public int UserId { get; set; }
+        public DateTime CreateOn { get; set; } = DateTime.Now;
+
     }
 }
