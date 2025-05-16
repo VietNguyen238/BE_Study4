@@ -24,7 +24,7 @@ namespace be_study4.Repository
             }
 
             long size = file.Length;
-            if (size > (5 * 1024 * 1024))
+            if (size > (5 * 1024 * 2024))
             {
                 return "Maximum size can be 5mb";
             }
@@ -40,8 +40,7 @@ namespace be_study4.Repository
             var uploadParams = new ImageUploadParams()
             {
                 File = new FileDescription(file.FileName, file.OpenReadStream()),
-                PublicId = Guid.NewGuid().ToString(),
-                Transformation = new Transformation().Width(1024).Height(768).Crop("scale")
+                PublicId = Guid.NewGuid().ToString()
             };
 
             var uploadResult = await cloudinary.UploadAsync(uploadParams);
